@@ -11,6 +11,7 @@ To run the program, just type:
 For example, to solve the puzzle above, go to “crossword” directory and type:
             $ python solver.py test_cases/test3
 Each puzzle board is represented as chars separated by space. The above puzzle can be represented as:
+
       . _ _ a _ . . _
       . o . . u . . o
       e _ _ . _ _ o _
@@ -35,7 +36,8 @@ The first part of the algorithm is preprocessing the dictionary and grouping of 
 Before processing the dictionary, scan the board and find all the patterns. Then find all the words that match those patterns. Assume the dictionary is of size O(N), then by doing this the seach space for each word is shrinked to O((N/a)), while a>1.
 The second part is to recursively try all different combinations as well as backtracking. The algorithm follows a DFS pattern to move from one incomplete word to another.
 
-Assume that a board contains M incomplete words, then the backtracking algorithm yields O((N/a)^M) runtime complexity as well as O(N) space complexity for storing the hashmap. 
+Assume that a board contains M incomplete words, then the backtracking algorithm yields O((N/a)^M) runtime complexity as well as O(N) space complexity for storing the hashmap.
+ 
       . s o a p . . _
       . o . . u . . o
       e _ _ . _ _ o _
@@ -65,4 +67,5 @@ Assume that a board contains M incomplete words, then the backtracking algorithm
       _ o _ _ e . . o
       o . . . _ . . a
       _ o o _ e . . _
+
 Most of crossword puzzles are solved within one minute using this program.
